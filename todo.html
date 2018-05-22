@@ -1,0 +1,19 @@
+<div id="todo_container">
+  <h1 class="header">To-Do List</h1>
+  <form ng-submit="$ctrl.addItem($ctrl.newItem);">
+    <input class="add_input" type="text" placeholder="Add Item" ng-model="$ctrl.newItem.task">
+  </form>
+  <ol>
+      <li class="list_items" ng-repeat="things in $ctrl.list" ng-class="{'completed': things.completed}">
+        <i class="material-icons check" ng-if="!things.completed" ng-click="$ctrl.completeItem(things);">check_circle</i>
+        {{things.task}}
+        <i class="material-icons edit" ng-click="$ctrl.editItem($index, things)" ng-if="!things.completed">edit</i>
+        <i class="material-icons clear" ng-click="$ctrl.removeItem($index);">clear</i>
+      </li>
+  </ol>
+  <form class="edit_form" ng-submit="$ctrl.updateItem($ctrl.tempIndex, $ctrl.tempItem);" ng-if="$ctrl.allowEdit">
+    <input class="edit_input" type="text" ng-model="$ctrl.tempItem">
+    <button class="edit_button" type="button" ng-click="$ctrl.updateItem($ctrl.tempIndex, $ctrl.tempItem);">Edit</button>
+  </form>
+
+</div>

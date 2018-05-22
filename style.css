@@ -1,0 +1,102 @@
+*::before,
+*::after,
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f1f1f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#todo_container {
+  max-width: 360px;
+  box-shadow: 0 0 15px 1px rgba(0,0,0,0.25);
+}
+
+.header {
+  background-color: purple;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+  padding: .5rem;
+}
+
+.add_input {
+  width: 100%;
+  padding: 1rem;
+  font-size: 20px;
+  color: rgba(255,255,255,0.95);
+  background-color: plum;
+  border: none;
+  box-shadow: inset 0px 0px 1px 1px rgba(0,0,0,0.25);
+}
+
+.add_input::placeholder {
+  color: rgba(255,255,255,0.95);
+}
+
+.list_items {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  position: relative;
+}
+
+.list_items:nth-child(even) {
+  background-color: plum;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+.clear {
+  position: absolute;
+  top: 13px;
+  right: 20px;
+}
+
+.check {
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.edit {
+  position: absolute;
+  right: 50px;
+  top: 14px;
+  font-size: 22px;
+}
+
+.edit_form {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+}
+
+.edit_input {
+  width: 100%;
+  padding: .75rem;
+  color: rgba(255,255,255,0.95);
+  background-color: purple;
+  border: none;
+  box-shadow: inset 0px 0px 3px 1px rgba(0,0,0,0.35);
+}
+
+.edit_button {
+  width: 50px;
+  border: none;
+  background-color: aqua;
+  color: black;
+  font-weight: bolder;
+  margin: 0;
+  padding: 0;
+}
